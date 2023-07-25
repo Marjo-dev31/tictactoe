@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(44, 41, 44);
+    background-color: rgb(247, 239, 247);
+}
+
+#main-header {
+    background-color: rgb(140, 0, 255);
+    color: white;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+#game-configuration ol {
+    text-align: center;
+    color: white;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#game-configuration li {
+    background-color: rgb(140, 0, 255);
+    margin: 0;
+    border-style: solid;
+    border-color: black;
+    padding: 3rem;
+}
+
+#game-configuration li button {
+    background-color: white;
+    color: rgb(140, 0, 255);
+    font-weight: bold;
+    border-radius: 5rem;
+    font-size: 1rem;
+    padding: 5% 1rem;
+
+}
+
+#start-new-game-button {
+    background-color: rgb(140, 0, 255);
+    text-align: center;
+    display: flex;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+}
+
+#active-game {
+    text-align: center;
+    color: white;
+    width: 40%;
+    margin: auto;
+}
+
+#active-game h3 {
+    background-color: rgb(140, 0, 255);
+    padding: 0.5rem;
+}
+
+#active-game p {
+    background-color: rgb(140, 0, 255);
+    padding: 0.5rem;
+
+}
