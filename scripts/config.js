@@ -8,13 +8,10 @@ function openPlayerConfig(event) {
 function closePlayerConfig() {
     playerConfigOverlayElement.style.display = 'none';
     backdropElement.style.display = 'none';
-    errorsOutputElement.textContent = '';
     formElement.firstElementChild.classList.remove('error');
+    errorsOutputElement.textContent = '';
+    formElement.firstElementChild.lastElementChild.value = '';
 }
-
-// function namePlayerConfig() {
-//     player1NameElement.textContent = inputElement.textContent;
-// }
 
 function savePlayerConfig(event) {
     event.preventDefault();
@@ -22,13 +19,16 @@ function savePlayerConfig(event) {
     const enteredPlayername = formData.get('playername').trim(); /*trim transforme '    ' en '' , input vide*/
 
     if (!enteredPlayername) {
-        errorsOutputElement.textContent = 'Please enter a valid name!';
         event.target.firstElementChild.classList.add('error');
+        errorsOutputElement.textContent = 'Please enter a valid name!';
         return;
     }
 
-const updatedPLayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
-updatedPLayerDataElement.children[1].textContent = enteredPlayername
+    const updatedPLayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
+    updatedPLayerDataElement.children[1].textContent = enteredPlayername;
 
+    players[editedPlayer - 1].name = enteredPlayername;
+
+    closePlayerConfig();
 }
 
