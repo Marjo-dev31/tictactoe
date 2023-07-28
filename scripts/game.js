@@ -12,14 +12,28 @@ function switchPlayer() {
         activePlayer = 1
     }
     else (activePlayer = 0);
- activePlayerNameElement.textContent = players[activePlayer].name;
+    activePlayerNameElement.textContent = players[activePlayer].name;
 }
 
 function selectedGameField(event) {
-    if (event.target.tagName !== 'LI'){
-    return;
+    if (event.target.tagName !== 'LI') {
+        return;
     }
-    event.target.textContent = players[activePlayer].symbol;
-    event.target.classList = 'disabled';
+
+    const selectedField = event.target
+    const selectedColumn = selectedField.dataset.column - 1;
+    const selectedRow = selectedField.dataset.row - 1;
+
+    if (gameData[selectedRow][selectedColumn] > 0) {
+        alert('Please choose an empty field!')
+        return;
+    }
+
+    selectedField.textContent = players[activePlayer].symbol;
+    selectedField.classList = 'disabled';
+
+    gameData[selectedRow][selectedColumn] = activePlayer + 1;
+
+
     switchPlayer();
 }

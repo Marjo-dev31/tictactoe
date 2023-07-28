@@ -1,3 +1,10 @@
+
+const gameData = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+];
+
 let editedPlayer = 0;
 let activePlayer = 0;
 
@@ -26,10 +33,10 @@ const startGameBtnElement = document.getElementById('start-game-btn');
 // const gameFieldElements = document.querySelectorAll('#game-board li');
 const gameBoardElement = document.getElementById('game-board');
 
-editPlayer1BtnElement.addEventListener('click',openPlayerConfig);
-editPlayer2BtnElement.addEventListener('click',openPlayerConfig);
+editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
+editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
 
-cancelConfigBtnElement.addEventListener('click',closePlayerConfig);
+cancelConfigBtnElement.addEventListener('click', closePlayerConfig);
 backdropElement.addEventListener('click', closePlayerConfig);
 
 
