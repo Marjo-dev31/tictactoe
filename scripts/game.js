@@ -7,6 +7,7 @@ function startNewGame() {
     activePlayerNameElement.textContent = players[activePlayer].name;
 }
 
+
 function switchPlayer() {
     if (activePlayer === 0) {
         activePlayer = 1
@@ -19,11 +20,11 @@ function selectedGameField(event) {
     if (event.target.tagName !== 'LI') {
         return;
     }
-
+    
     const selectedField = event.target
     const selectedColumn = selectedField.dataset.column - 1;
     const selectedRow = selectedField.dataset.row - 1;
-
+    
     if (gameData[selectedRow][selectedColumn] > 0) {
         alert('Please choose an empty field!')
         return;
@@ -31,9 +32,13 @@ function selectedGameField(event) {
 
     selectedField.textContent = players[activePlayer].symbol;
     selectedField.classList = 'disabled';
-
+    
     gameData[selectedRow][selectedColumn] = activePlayer + 1;
-
-
+    
+    
     switchPlayer();
+}
+
+function checkForGameOver() {
+
 }
